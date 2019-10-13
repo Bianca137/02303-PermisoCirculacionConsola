@@ -15,15 +15,38 @@
  */
 package org.japo.java.main;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  *
  * @author Bianca Antonela Glavan - biancaantonela.glavan.alum@iescamp.es
  */
 public class Main {
+
+    public static final Scanner SCN
+            = new Scanner(System.in, "Windows-1252")
+                    .useLocale(Locale.ENGLISH).useDelimiter("\\s+");
+
     public static void main(String[] args) {
-        
-    
-        
+
+        // Variable
+        char letraDNI;
+
+        // Cuarentena
+        try {
+            // Leer dato
+            System.out.print("Introduce la letra de tu DNI: ");
+            letraDNI = SCN.nextLine().charAt(0);
+
+            // Mensaje
+            System.out.println("Letra DNI.........:" + letraDNI);
+
+        } catch (Exception e) {
+            // Mensaje
+            System.out.println("ERROR: Entrada incorrecta");
+        }
+
     }
-    
+
 }
